@@ -1,0 +1,16 @@
+{
+    "port": "80",
+    "token": "ODkyNDk3Nzc1MTc3MTEzNjkw.YVNxUw.4IXYggvmU_uAWeWWRahSSAwyzj4",
+    "prefix": "!",
+    "owerids": ["767564039818706966", ""],
+    "storage": {
+        "type": "json",
+        "mysql": {
+            "host": "",
+            "user": "",
+            "password": "",
+            "database": ""
+        },
+        "mysql_anti_idle": true
+    }
+}
