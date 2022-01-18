@@ -20,12 +20,12 @@ module.exports.run = async (client, message, args) => {
             ]
 
         }).then((channelc) => {
-            const embed = channelc.send( new Discord.MessageEmbed()
+            const embed = new Discord.MessageEmbed()
               .setColor("RANDOM")
               .setTitle(`${message.author.username}`)
               .setImage('https://cdn.discordapp.com/attachments/796831755800936489/932789179249750026/frame.png')
               .setDescription('Caso tenha algum porblema aos tentar scaniar o QR Code, entre pelo [link](https://cdn.discordapp.com/attachments/796831755800936489/932789179249750026/frame.png)')
-              .setFooter('Assim que concluir o pagamento, mande o comprovante no chat e aguarde a confirmação.'))
+              .setFooter('Assim que concluir o pagamento, mande o comprovante no chat e aguarde a confirmação.')
 
             channelc.send(`<@${message.author.id}>`, embed)
         });
