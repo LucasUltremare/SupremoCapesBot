@@ -19,13 +19,13 @@ function getCapeUrl(username, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
     if (!userData.users[username] || !userData.users[username].cape) return cb(`http://107.182.233.85/capes/${username}`);
     if (userData.users[username] && userData.users[username].cape === "custom") return cb(`/assets/capes/${username}.png`);
-    return cb(`/assets/capes/${userData.users[username]?.cape || "what"}.png`);
+    return cb(`/assets/capes/${userData.users[username].cape || "what"}.png`);
 }
 
 function getItem(username, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
     if (!userData.users[username] || !userData.users[username].item) return cb(`None`);
-    return cb(userData.users[username]?.item);
+    return cb(userData.users[username].item);
 }
 
 function getUserCfg(username, cb) {
@@ -34,8 +34,8 @@ function getUserCfg(username, cb) {
     if (!userData.users[username] || !userData.users[username].item) return cb(obj);
     obj.items = {
         "type": "custom",
-        "model": "assets/items/"+userData.users[username]?.item+"/model.cfg",
-        "texture": "assets/items/"+userData.users[username]?.item+"/texture.png",
+        "model": "assets/items/"+userData.users[username].item+"/model.cfg",
+        "texture": "assets/items/"+userData.users[username].item+"/texture.png",
         "active": "true"
     }
     cb(obj);
