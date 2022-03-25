@@ -12,9 +12,6 @@ if (config.storage.type === 'json') {
 
 module.exports.run = async (client, message, args) => {
 
-  const emoji = client.emojis.cache.find(e =>  e.name === 'config');
-  const channelName = client.channels.cache.find(ch1 => ch1.name.includes(message.author.id));
-
     users.getLink(message.author.id, username => {
 
       if (!username) return createEmbed('error', 'You aren\'t linked!', `You don't seem to have a linked minecraft account!\n\nIf this is a mistake, contact one of the cape owners.`, null, message)
@@ -37,10 +34,7 @@ module.exports.run = async (client, message, args) => {
           embed.setImage(`attachment://${args[0]}.png`);
           embed.setThumbnail(message.author.avatarURL())
 
-          message.channel.send({ embed: embed}, `${emoji} Esse canel será apagado em alguns estantes.`)
-          setTimeout(() => channelName.delete(), 10000)
-
-          message.author.send({ embed: embed});
+          message.channel.send({ embed: embed});
 
         } else {
           createEmbed('error', 'Unknown Cape', 'That cape is not available or does not exist!\n\nTo see a list of available capes use: ``!list cape``', null, message)
