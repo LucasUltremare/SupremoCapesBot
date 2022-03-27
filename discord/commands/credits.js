@@ -5,10 +5,10 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
   const embed = new Discord.MessageEmbed()
   .setTitle("Credits")
-  .setURL("https://vops.cc/")
-  .setColor('BLUE')
-  .setDescription("Cape System created by ItsVops on GitHub.\n\nhttps://vops.cc\nhttps://github.com/ItsVops\nhttps://twitter.com/vopswtf")
-  .setThumbnail("https://i.imgur.com/mPAj7qS.png")
+  .setURL("")
+  .setColor('RAMDOM')
+  .setDescription("Sistema desenvolvido pela equipe da [Supremo](https://discord.gg/QxzHetgjh3)")
+  .setThumbnail("https://media.discordapp.net/attachments/796831755800936489/938242541780865044/PicsArt_02-01-10.20.26.png?width=427&height=427")
   message.channel.send(embed)
 }
 

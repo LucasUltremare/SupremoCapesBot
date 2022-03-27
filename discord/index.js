@@ -19,7 +19,7 @@ fs.readdir("./discord/commands", (err, files) => {
 
 client.on("ready", async () => {
   console.log(`Discord Bot is online.`);
-  client.user.setActivity('Your Capes!', { url: 'https://twitch.tv/vopstv', type: 'STREAMING' });
+  client.user.setActivity('Your Capes!', { url: 'https://discord.gg/pm2rKVGhGQ', type: 'STREAMING' });
 });
 
 client.on("message", async message => {

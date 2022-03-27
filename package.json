@@ -15,5 +15,15 @@
   },
   "author": "ItsVops",
   "license": "ISC",
-  "description": "simple way to host your own optifine proxy"
+  "description": "simple way to host your own optifine proxy",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasUltremare/SupremoCapesBot.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/LucasUltremare/SupremoCapesBot/issues"
+  },
+  "homepage": "https://github.com/LucasUltremare/SupremoCapesBot#readme"
 }
