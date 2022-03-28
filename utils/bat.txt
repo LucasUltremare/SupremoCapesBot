@@ -60,7 +60,7 @@ GOTO intro
 :install
     REM Create a temporary file that and put all of the hosts
     REM file contents in it excluding existing redirects
-    FINDSTR /V "34.68.41.85 s.optifine.net # INSERTED BY MINECRAFT CAPES" "%HOSTS_FILE%" > "%TEMP_HOSTS_FILE%"
+    FINDSTR /V "REPLACE_ME s.optifine.net # INSERTED BY MINECRAFT CAPES" "%HOSTS_FILE%" > "%TEMP_HOSTS_FILE%"
     REM Add the redirect to the new file
     ECHO REPLACE_ME s.optifine.net # INSERTED BY MINECRAFT CAPES >> "%TEMP_HOSTS_FILE%"
     REM Replace the Hosts file with the Temp file

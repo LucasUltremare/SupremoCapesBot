@@ -18,26 +18,26 @@ function getCape(username, cb) {
 function getCapeUrl(username, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
     if (!userData.users[username] || !userData.users[username].cape) return cb(`http://107.182.233.85/capes/${username}`);
-    if (userData.users[username] && userData.users[username].cape === "custom") return cb(`/assets/capes/${username}.png`);
-    return cb(`/assets/capes/${userData.users[username].cape || "what"}.png`);
+    if (userData.users[username] && userData.users[username].cape === "custom") return cb(`/assets/custom/${username}.png`);
+    return cb(`/assets/capes/${userData.users[username]?.cape || "If you are seeing this, update your node.js!"}.png`);
 }
 
 function getItem(username, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
     if (!userData.users[username] || !userData.users[username].item) return cb(`None`);
-    return cb(userData.users[username].item);
+    return cb(userData.users[username]?.item);
 }
 
 function getUserCfg(username, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
     let obj = {items:[]}
     if (!userData.users[username] || !userData.users[username].item) return cb(obj);
-    obj.items = {
-        "type": "custom",
-        "model": "assets/items/"+userData.users[username].item+"/model.cfg",
-        "texture": "assets/items/"+userData.users[username].item+"/texture.png",
-        "active": "true"
-    }
+    obj.items.push({
+      "type": "custom",
+      "model": "assets/items/"+userData.users[username]?.item+"/model.cfg",
+      "texture": "assets/items/"+userData.users[username]?.item+"/texture.png",
+      "active": "true"
+    })
     cb(obj);
 }
 
@@ -67,7 +67,10 @@ function setCape(username, cape, cb) {
         "item": null
       }
     }
-    if (!fs.existsSync(`./api/assets/capes/${cape}.png`)) return cb(false);
+    if (!fs.existsSync(`./api/assets/capes/${cape}.png`) && cape !== "custom" && cape !== "none") return cb(false);
+    if (cape === "none") {
+      cape = null;
+    }
     userData.users[username].cape = cape
     fs.writeFileSync('./api/users.json', JSON.stringify(userData, null, 2))
     return cb(true)
@@ -81,7 +84,10 @@ function setItem(username, item, cb) {
         "item": null
       }
     }
-    if (!fs.existsSync(`./api/assets/items/${item}/model.cfg`)) return cb(false)
+    if (!fs.existsSync(`./api/assets/items/${item}/model.cfg`) && item !== "none") return cb(false)
+    if (item === "none") {
+      item = null;
+    }
     userData.users[username].item = item
     fs.writeFileSync('./api/users.json', JSON.stringify(userData, null, 2))
     return cb(true)

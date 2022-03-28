@@ -1,8 +1,5 @@
 {
     "port": "80",
-    "token": "OTEwMTkwNzYwMzYyNjM5Mzgx.YZPPMw.upMnGu0RuWzB6s5eYKDsR2gBA1U",
-    "prefix": "1",
-    "owerids": ["767564039818706966", ""],
     "storage": {
         "type": "json",
         "mysql": {
@@ -12,5 +9,23 @@
             "database": ""
         },
         "mysql_anti_idle": true
+    },
+    "discord": {
+        "active": true,
+        "token": "ODU2MjA2NjAyMjA5NDYwMjM2.YM9qiQ.Nw9FJSNWYUyBikMMCJjRl-VLB3o",
+        "prefix": "!",
+        "ownerIds": ["OWNERID1", "OWNERID2"]
+    },
+    "server": {
+        "active": true,
+        "port": 25565,
+        "motd": "§9Vops Capes §7» §bLink your Account",
+        "version": "1.8.8"
+    },
+    "panel": {
+        "active": true,
+        "allowedInPanel": ["", "PUT_MORE_IDS"],
+        "client_id": "",
+        "client_secret": ""
     }
 }

@@ -21,5 +21,5 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
   name:"viewitem",
-  action: "view an item"
+  action: "ver um item"
 }

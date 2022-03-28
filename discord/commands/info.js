@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args) => {
           let embed = new Discord.MessageEmbed()
           .setColor('BLUE')
           users.getUser(username, lol => {
-            embed.setDescription(`**Discord: **${member}\n**Username: **${username}\n**Cape: **${lol.cape}\n**Item: **${lol.item}`)
+            embed.setDescription(`**Discord: **${member}\n**Username: **${username}\n**Cape: **${lol.cape || "None"}\n**Item: **${lol.item || "None"}`)
             embed.setThumbnail(`https://minotar.net/avatar/${username}/100`)
             message.channel.send(embed)
           })
@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
           users.getLinkFromUser(args[0], linkGot => {
             let embed = new Discord.MessageEmbed()
             .setColor('BLUE')
-            .setDescription(`**Discord: **<@${linkGot}>\n**Username: **${args[0]}\n**Cape: **${info.cape}\n**Item: **${info.item}`)
+            .setDescription(`**Discord: **<@${linkGot}>\n**Username: **${args[0]}\n**Cape: **${info.cape || "None"}\n**Item: **${info.item || "None"}`)
             .setThumbnail(`https://minotar.net/avatar/${args[0]}/100`)
             message.channel.send(embed)
           })
@@ -40,5 +40,5 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
   name:"info",
-  action: "get information about a player or discord user"
+  action: "obter informações sobre um jogador ou usuário do discord"
 }

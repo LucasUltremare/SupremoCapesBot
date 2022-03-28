@@ -9,11 +9,7 @@ if (config.storage.type === 'json') {
 }
 
 module.exports.run = async (client, message, args) => {
-    
-    //Old if => if (!config.owerids.includes(message.author.id)) return createEmbed('warning', 'No Permission!', `You don't have permission to use this command!`, null, message)
-    
-   // if(!message.member.roles.cache.find(r => r.name == "capes")) return message.reply("Você não tem permissões para usar este comando.");
-
+    //perm ifif (!config.discord.ownerIds.includes(message.author.id)) return createEmbed('warning', 'No Permission!', `You don't have permission to use this command!`, null, message)
     if (!message.mentions.users.first() || !args[1]) return createEmbed('info', 'Link Command', `Command to link discord users to their minecraft account.` + "\n\n**Usage**\n\n" +  "``!link <discord tag> <minecraft username>``\n\nTo see a list of available capes, use ``!list cape``", null, message)
     let member = message.mentions.users.first();
     users.setLink(member.id, args[1], output => {
@@ -27,5 +23,5 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
   name:"link",
-  action: "link a minecraft player to their discord account"
+  action: "vincular seu nick do minecraft à sua conta do discord"
 }

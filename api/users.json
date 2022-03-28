@@ -3,30 +3,10 @@
     "ItsVops": {
       "cape": "vops",
       "item": "axolotl"
-    },
-    "NetHunterXX": {
-      "cape": [
-        "2012",
-        "vops"
-      ],
-      "item": "angel_wings"
-    },
-    "! SrSмσℓℓку⁷": {
-      "cape": [
-        "2012",
-        "vops"
-      ],
-      "item": "angel_wings"
-    },
-    "Smollky": {
-      "cape": "2016",
-      "item": null
     }
   },
   "discordLink": {
     "111973782612156416": "ItsVops",
-    "459159579830386708": "NetHunterXX",
-    "328135549464346636": "PozeGordo",
-    "479733668559192066": "Smollky"
+    "459159579830386708": "NetHunterXX"
   }
 }
